@@ -1,0 +1,49 @@
+body {
+  background: radial-gradient(circle, red, blue 120%);
+}
+
+div.calc,
+div.calc > section {
+  margin: auto auto;
+  border-radius: 20px;
+}
+
+div.calc section {
+  position: relative;
+  width: 25em;
+}
+
+div.calc {
+  background: black;
+  width: 30em;
+  height: 40em;
+}
+
+div.calc section.box {
+  top: 4em;
+  background: grey;
+  height: 30em;
+}
+
+div.calc section.display {
+  top: 30px;
+  background: white;
+  height: 5em;
+  text-align: center;
+}
+
+div.calc section.box > button {
+  width: 6.7em;
+  height: 4em;
+  border: none;
+  background: none;
+  font-size: 120%;
+}
+
+div.calc > section.display > span {
+  font-size: 200%;
+}
+
+div.calc section.box > button:hover {
+  background: pink;
+}
