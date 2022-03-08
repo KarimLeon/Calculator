@@ -42,9 +42,14 @@ function buttonFunctionality() {
     oppy.onclick = () => {
     let o = oppy.textContent
       if (o == "AC") span.textContent = ""
+      if (o == "%") span.textContent = ""
+      if (o == "x") span.textContent = ""
+      if (o == "+") span.textContent = ""
+      if (o == "-") span.textContent = ""
+      if (o == "/") span.textContent = ""
 
       if (o == "AC" || "%" || 'x' || '+' || '-' || '/')  {
-           operations[6].removeAttribute('disabled')
+           operations[6].removeAttribute('disabled'); 
       }
       if (o == ".") { 
            span.textContent += o
