@@ -145,16 +145,34 @@ function buttonFunctionality() {
   var operations = Object.values(button).filter(function (o) {
     return isNaN(o.textContent);
   });
-  var firstVal, secVal;
+  var firstVal, secVal, exp;
 
-  function Arithmetic() {
-    this.a = +firstVal;
-    this.b = +secVal;
-  }
 
-  var obj = new Arithmetic();
   operations.forEach(function (oppy) {
     oppy.onclick = function () {
+
+      var operatorRoles = {
+         arithmetics: {
+           "+" : a + b,
+           "-" : a - b,
+           "x" : a * b,
+           "/" : a / b,
+           "%" : a % b 
+         },
+
+         other: {
+           "AC": span.textContent = "",
+           "." : null,
+           "=" : span.textContent = operatorRoles.arithmetics
+         }
+      }
+
+
+
+
+
+
+      /*
       var o = oppy.textContent;
       if (o == "AC") span.textContent = "";
       if (o == "%") span.textContent = "";
@@ -163,7 +181,6 @@ function buttonFunctionality() {
       if (o == "+") {
         firstVal = span.textContent;
         span.textContent = "";
-        obj["exp"] = _this.a + _this.b;
       }
 
       if (o == "-") span.textContent = "";
@@ -180,13 +197,18 @@ function buttonFunctionality() {
 
       if (o == "=") {
         secVal = span.textContent;
-
+        
         span.textContent = (function () {
-          return obj["exp"];
+           return +firstVal + +secVal;
         })();
       }
+      */
     };
   });
+
+
+
+
   numbers.forEach(function (num) {
     num.onclick = function () {
       span.textContent += num.textContent;
