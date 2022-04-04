@@ -37,7 +37,11 @@ function buttonFunctionality() {
 
   operations.forEach(oppy => { 
     oppy.onclick = () => {
-    let o = oppy.textContent
+      let onButtonClick = oppy.textContent;
+      switch (onButtonClick) {
+            case "AC" : 
+              span.textContent = ""
+      }
     }
   })
 
@@ -57,7 +61,7 @@ function buttonFunctionality() {
 createButtons(18)
 buttonFunctionality()
 
-*/
+
 
 
 
