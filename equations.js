@@ -1,22 +1,19 @@
 'use strict'
 
 
-const sectionBox = document.querySelector("body > div > section.box") 
-const numArr = ['AC', '%', '/', '+', '-', 'x', 7, 8, 9, 4, 5, 6,
-               1, 2, 3, '.', 0, '=']
-const sectionDisplay = document.querySelector('body > div.calc > section.display') 
-const divCalc = document.querySelector('.calc')
+const sectionBox = document.querySelector("body > div > section.box"),
+      numArr = ['AC', '%', '/', '+', '-', 'x', 7, 8, 9, 4, 5, 6,
+               1, 2, 3, '.', 0, '='],
+      sectionDisplay = document.querySelector('body > div.calc > section.display'),
+      divCalc = document.querySelector('.calc')
 
 function createButtons(value) {
 
 for (let adder = 0; adder < value; adder++) {      
-   let numButtons = document.createElement('button') 
-     
-
-   numButtons.textContent = numArr[adder];
-  
-   sectionBox.appendChild(numButtons)
-  }
+        let numButtons = document.createElement('button') 
+        numButtons.textContent = numArr[adder];
+        sectionBox.appendChild(numButtons)
+      }
 }
 
 let span = document.querySelector('div.calc > section.display > span') 
@@ -24,8 +21,6 @@ let span = document.querySelector('div.calc > section.display > span')
 
 function buttonFunctionality() {
   const button = document.querySelectorAll('button')
-   
-
   
   //Array of number buttons
    let numbers = Object.values(button).filter(num => { 
@@ -37,12 +32,17 @@ function buttonFunctionality() {
       return isNaN(o.textContent) 
    })
 
+<<<<<<< HEAD
  
   
+=======
+   let firstVal, secVal;
+>>>>>>> 97c55cbd4524cce6667ee4f6b2fa9fde491906d0
 
 
   operations.forEach(oppy => { 
     oppy.onclick = () => {
+<<<<<<< HEAD
     let buttonClicked = oppy.textContent
 
     switch (buttonClicked) {
@@ -68,6 +68,75 @@ function buttonFunctionality() {
   })
   
   let a, b; 
+=======
+      let onButtonClick = oppy.textContent;
+      switch (onButtonClick) {
+            case "AC" : 
+              span.textContent = ""
+      }
+    }
+  })
+
+   numbers.forEach(num => { 
+      num.onclick = () => {
+         span.textContent += num.textContent
+         
+         
+         if (span.textContent.length > 25)
+              span.textContent = "Relax Brethren, Num is too big boy"
+      }
+   })
+
+   
+    
+}
+createButtons(18)
+buttonFunctionality()
+
+
+
+
+
+
+
+
+      /*
+      var o = oppy.textContent;
+      if (o == "AC") span.textContent = "";
+      if (o == "%") span.textContent = "";
+      if (o == "x") span.textContent = "";
+
+      if (o == "+") {
+        firstVal = span.textContent;
+        span.textContent = "";
+      }
+
+      if (o == "-") span.textContent = "";
+      if (o == "/") span.textContent = "";
+
+      if (o == "AC" || "%" || "x" || "+" || "-" || "/") {
+        operations[6].removeAttribute("disabled");
+      }
+
+      if (o == ".") {
+        span.textContent += o;
+        operations[6].setAttribute("disabled", "disabled");
+      }
+
+      if (o == "=") {
+        secVal = span.textContent;
+        
+        span.textContent = (function () {
+           return +firstVal + +secVal;
+        })();
+      }
+      */
+    };
+  });
+
+
+
+>>>>>>> 97c55cbd4524cce6667ee4f6b2fa9fde491906d0
 
   numbers.forEach(function (num) {
     num.onclick = function () {
