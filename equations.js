@@ -46,7 +46,7 @@ function buttonFunctionality() {
 
     switch (buttonClicked) {
       case "AC":
-        span.teContent = "";
+        span.textContent = "";
         break;
 
       case "+" :
